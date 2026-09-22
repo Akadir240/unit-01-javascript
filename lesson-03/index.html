@@ -7,7 +7,19 @@
 </head>
 <body>
     <script>
+        let raw = "  jOHN smith ";
 
+    let clean = raw.trim().toLowerCase();   // 1. remove the extra spaces, make it all lowercase
+    console.log(clean);  
+    let space = clean.indexOf(' ');   // 2. find the space between the names
+    console.log(space);
+    let first = clean.slice(0, space);   // 3. cut out the first name
+    console.log(first);
+    let last  =clean.slice(space + 1);   // 4. cut out the last name
+    console.log(last);
+    first = ;       // 5. capitalize each one
+    last  = ;
+    console.log();  // 6. print "Last, First"
 
 
     </script>
