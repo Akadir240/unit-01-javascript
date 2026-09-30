@@ -7,7 +7,34 @@
 </head>
 <body>
     <script>
+        let day = (prompt("What numberd day of the week is it?"));
+        if (day !==null) {
+            day = day.toLowerCase();
+        }
+        
+        switch (day) { 
+            case "monday":
+            alert("Monday: Basketball Practice");
+                break;
+            case "tuesday":
+            alert("Tusday: We got bible study")
+                break;
+            case "wednesday":
+             alert("Wenesday: We got JROTC")
+                break;
+            case "thursday":
+                alert("Thursdsay: We got work at the library")
+                break;
+            case "friday":
+                alert("Friday: Going golfing with friends")
+                break;
+            case "saturday": case "sunday":
+                alert("Saturday and Sunday: It's the weekend, time to relax!") 
+                break;
+                default:
+                alert("Not a valid day of the week");
 
+        }
 
 
     </script>
