@@ -7,7 +7,31 @@
 </head>
 <body>
     <script>
-
+       let grade =Number(prompt("Enter your score"));
+        if (grade >= 90) {
+                alert ("You get an A");
+        }   else if (grade >= 80) {
+                alert ("You get a B");
+        }   else if (grade >= 70) {
+                alert ("You get a C");
+        }   else if (score >= 60) {
+                alert ("You get an D");
+        }   else {
+                alert ("You get an F");
+            }
+       
+        /*
+            TEST RESULTS - Letter Grade Converter
+            Test score | Expected | Your output
+            -----------|----------|------------
+            90         | A        | A
+            89         | B        | B
+            60         | D        | D
+            59         | F        | F
+            100        | A        | A
+            You should use number because if its not it will come up as a string 
+        */
+       
 
 
     </script>
