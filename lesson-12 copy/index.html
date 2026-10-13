@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let secret = Math.floor(Math.random() * 100) + 1;
+        let input = Number(prompt("Guess a number between 1 and 100?"));
+
+        
+       while (input !== secret) {
+       if (input === null) {
+            alert("You have exited the game." + secret);
+            break;
+        }
+        else if (input < secret) {
+        alert ("Too low! Try again.");
+        } else if (input > secret) {
+            alert ("Too high! Try again.");
+        } else {
+            alert ("You guessed it! The number was " + secret);
+            continue;
+        } 
+        
+         input = Number(prompt("Guess a number between 1 and 100?"));
+       }
+    
+
+    </script>
+</body>
+</html>

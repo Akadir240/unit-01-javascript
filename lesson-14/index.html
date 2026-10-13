@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   // ---------- Puzzle 1: Same name, different variable ----------
+        // PREDICTION: puzzel 1 will be looged,2,livees 
+    // ACTUAL: 3 2
+    // WHY: It only logs 3 and 2 because the variable lives is not changed in the function loseLife. The function creates a new variable called lives that is local to the function and does not affect the global variable lives. 
+    // Therefore, when we log lives, it still has its original value of 3, while left has the value of 2 returned from the function.
+    console.log("--- Puzzle 1 ---");
+    let lives = 3;
+    function loseLife(lives) {
+    lives = lives - 1;
+    return lives;
+}
+    let left = loseLife(lives);
+    console.log(lives, left);
+   
+   // ---------- Puzzle 2: The unchanged score ----------
+// PREDICTION: I predict that the thing that gets outptuuted is 100 and 50
+// ACTUAL: The output is 100 and 50
+// WHY: The reason why it's 100 and 50 is because 50 is only afftted witht he console.log because its outside of the function so its a globol scope and while the being in that function is 100 beacuse its only being afftected by taking the actual value so it will be 100
+console.log("--- Puzzle 2 ---");
+let score = 50;
+function doubleIt(num) {
+    num = num * 2;
+    console.log(num);
+}
+doubleIt(score);
+console.log(score);
+
+// ---------- Puzzle 3: The quiet shout ----------
+// PREDICTION: My prediction is going to be WORD and dog 
+// ACTUAL: The output is DOG and dog
+// WHY: The output is dog and dog because the function doe not change the vaule.It takes the word itsself and changes it to uppercase  which is DOG and it also ouputs the word itself which is dog
+console.log("--- Puzzle 3 ---");
+function shout(word) {
+    word = word.toUpperCase();
+}
+let pet = "dog";
+shout(pet);
+console.log(pet);
+
+// MY FIX: Complete shoutFixed so pet ends up as "DOG"
+// without making pet global inside the function. (Hint: return)
+function shoutFixed(word) {
+    // write your code here
+    return word.toUpperCase();
+}
+pet = shoutFixed(pet);
+console.log("Puzzle 3 fix:", pet);
+
+   // ---------- Puzzle 4: The missing keyword ----------
+// PREDICTION:My prediction that it will be undifined and undifined 
+// ACTUAL: Refrence error 
+// WHY: The reason why its a refrence error is beacuse the variable isnt defined 
+console.log("--- Puzzle 4 ---");
+function startGame() {
+    let playerName = "Jordan";
+    let round = 1;
+}
+startGame();
+console.log(playerName);
+console.log(typeof round);
+   
+   </script>
+</body>
+</html>
