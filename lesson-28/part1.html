@@ -20,11 +20,13 @@
     let phone = document.getElementById("phone");
 
     // Write your code below
-   function showError(id, message) {
+   // core 1
+    function showError(id, message) {
     id.textContent = message;
     id.style.color = "red";
    }
 
+   //Core 2
    function checkName() {
     if(custName.value.trim() === "") {
       showError(document.getElementById("nameError"), "Enter your name");
@@ -34,9 +36,40 @@
       return true;
     }
    }
+   
+   //Core 3
    function checkQty() {
-    if
+    if(qty.value.trim() === "") {
+      showError(document.getElementById("qtyError"), "Enter quantity");
+      return false;
+    } else if(isNaN(qty.value) || parseInt(qty.value) <= 0) {
+      showError(document.getElementById("qtyError"), "Enter a valid number");
+      return false;
+    } else {
+      showError(document.getElementById("qtyError"), "");
+      return true;
     }
+   }
+   //Core 4
+   const CODE = "PIZZAA5";
+   function checkPromo() {
+    if(promo.value.trim() === "") {
+      showError(document.getElementById("promoError"), "Enter promo code");
+      return false;
+    } else if(promo.value !== CODE) {
+      showError(document.getElementById("promoError"), "Invalid promo code");
+      return false;
+    } else {
+      showError(document.getElementById("promoError"), "");
+      return true;
+    }
+   }
+   //Core 5
+   documen.addEventListener("blur" , checkName);
+   document.addEventListener("blur" , checkQty);
+   document.addEventListener("blur" , checkPromo);
+    //Core 6
+    
 
 
   </script>
