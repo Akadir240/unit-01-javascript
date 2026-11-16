@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizza Order</title>
+</head>
+<body>
+  <h1>Pizza Order</h1>
+  <form name="order">
+    <p>Name: <input type="text" id="custName"> <span id="nameError"></span></p>
+    <p>Quantity: <input type="text" id="qty"> <span id="qtyError"></span></p>
+    <p>Promo code: <input type="text" id="promo"> <span id="promoError"></span></p>
+    <p>Phone: <input type="text" id="phone"> <span id="phoneError"></span></p>
+    <button type="button" id="orderBtn">Place order</button>
+  </form>
+  <p id="orderStatus"></p>
+  <script>
+    let custName = document.getElementById("custName");
+    let qty = document.getElementById("qty");
+    let promo = document.getElementById("promo");
+    let phone = document.getElementById("phone");
+
+    // Write your code below
+   // core 1
+    function showError(id, message) {
+    id.textContent = message;
+    id.style.color = "red";
+   }
+
+   //Core 2
+   function checkName() {
+    if(custName.value.trim() === "") {
+      showError(document.getElementById("nameError"), "Enter your name");
+      return false;
+    } else {
+      showError(document.getElementById("nameError"), "");
+      return true;
+    }
+   }
+   
+   //Core 3
+   function checkQty() {
+    if(qty.value.trim() === "") {
+      showError(document.getElementById("qtyError"), "Enter quantity");
+      return false;
+    } else if(isNaN(qty.value) || parseInt(qty.value) <= 0) {
+      showError(document.getElementById("qtyError"), "Enter a valid number");
+      return false;
+    } else {
+      showError(document.getElementById("qtyError"), "");
+      return true;
+    }
+   }
+   //Core 4
+   const CODE = "PIZZAA5";
+   function checkPromo() {
+    if(promo.value.trim() === "") {
+      showError(document.getElementById("promoError"), "Enter promo code");
+      return false;
+    } else if(promo.value !== CODE) {
+      showError(document.getElementById("promoError"), "Invalid promo code");
+      return false;
+    } else {
+      showError(document.getElementById("promoError"), "");
+      return true;
+    }
+   }
+   //Core 5
+   documen.addEventListener("blur" , checkName);
+   document.addEventListener("blur" , checkQty);
+   document.addEventListener("blur" , checkPromo);
+    //Core 6
+    
+
+
+  </script>
+</body>
+</html>
